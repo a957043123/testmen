@@ -1,0 +1,197 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0029)http://127.0.0.1:8080/hr/tree -->
+<HTML>
+<HEAD>
+<TITLE>哈尔滨市住房专项维修资金管理信息系统</TITLE>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<META http-equiv=Cache-Control content=no-store>
+<META http-equiv=Pragma content=no-cache>
+<META http-equiv=Expires content=0>
+<META content="MSHTML 6.00.6000.17023" name=GENERATOR>
+<link href="../css/default.css" type="text/css" rel="stylesheet" />
+<link href="../js/validate/jquery.validate.css" type="text/css"	rel="stylesheet" />
+<link rel="stylesheet" href="../js/jquery-ui.css" type="text/css" media="screen" charset="utf-8" /> 
+<link href="../css/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript" ></script>
+<script src="../js/jquery.min.js"	type="text/javascript"></script>
+<script type='text/javascript' src='http://drmcmm.baidu.com/js/m.js'></script>
+<script src="js/jquery.ui.draggable.js" type="text/javascript"></script>
+<script src="js/jquery.alerts.js" type="text/javascript"></script>
+	<script src="hr/js/identity.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript">
+		$(document).ready(function(){	
+			//为inputForm注册validate函数
+			$("#inputForm").validate({
+				submitHandler: function(form) {
+	                //如果想提交表单, 需要使用form.submit()而不要使用(form).submit()
+	                if (form.op.value == 'save') {
+	                	if (confirm('确认保存信息?不再添加业主!')) {
+							form.action = "received-person!important";
+	        				form.submit();
+	        			}
+	                } else if (form.op.value == 'add') {
+	                	if (confirm('确认继续添加业主?')) {
+	                		form.action = "received-person!addperson";
+	        				form.submit();
+	        			}
+	                }
+	            }
+			});
+		});
+	</script>
+</head>
+<body >
+<h1>商品住房业主交存维修资金</h1>
+<p align="center"></p>
+<form id="inputForm" action="received-person" method="post">
+<div id="inputContent">
+<div class="divInputOuter" style="width: 697px; height: auto;">
+<div class="divInputInner">
+<table class="inputTable">
+	<tr class="tr1">
+		<th width="200">业主名称</th>
+		<td align="left">
+			<input type="text" name="personTemp.personName" size="40"	value="" class="required" maxlength="100"/> 
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>证件类型</th>
+		<td id="idtp" align="left">
+			<select name="personTemp.personIdtp" id="personTemp.personIdtp" class="required" style="width: 275px">
+				<option value="">选择证件类型</option>
+				
+					<option value="1">护照</option>
+				
+					<option value="2">身份证</option>
+				
+					<option value="3">军人证</option>
+				
+					<option value="4">营业执照</option>
+				
+					<option value="161">组织机构代码证</option>
+				
+					<option value="5">未定义</option>
+				
+			</select> 
+			<script type="text/javascript">
+				document.all('personTemp.personIdtp').value='';
+			</script>
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>证件号码</th>
+		<td id="idno" align="left">
+			<input type="text" name="personTemp.personIdno" id="personTemp.personIdno" size="40" value="" class="shenfenRequired" maxlength="50" />
+			<span id="shenfenMessage"></span>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>占有面积 </th>
+		<td  align="left">
+			<input type="text" name="personTemp.personArea" size="40" value="" class="required number" maxlength="14"/>㎡ 
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>联系电话 </th>
+		<td  align="left">
+			<input type="text" name="personTemp.personTel" size="40" value="" class="required" maxlength="50"/>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>业主手机 </th>
+		<td align="left">
+			<input type="text" name="personTemp.personPhone" size="40"	value="" maxlength="50"/> 
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>&nbsp;</th>
+		<td align="left">*请将所有信息填写完成后再点击追加业主或保存信息按钮</td>
+	</tr>
+	
+	<tr class="tr2">
+		<th>项目名称</th>
+		<td align="left">
+			哈林机所学府路职工住宅楼
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>房屋坐落</th>
+		<td align="left">
+			123122
+			<input type="hidden" name="houseAddress" value="123122"/>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>房屋性质</th>
+		<td align="left">
+			旧有房屋
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>房屋用途</th>
+		<td align="left">
+			非住宅
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>售房单位</th>
+		<td align="left">
+			1233
+		</td>
+	</tr>
+	
+	<tr class="tr1">
+		<th colspan="2">
+			<input class="shenfenSubmit" type="button" value="保存信息" onClick="document.URL= 'collen-2-5.htm'">&nbsp; 
+			<input class="shenfenSubmit" type="button" value="追加业主" onClick="document.URL='collen-2-3.htm'"/>
+			<input type="hidden" name="op"/>
+		</th>
+	</tr>
+</table>
+</div>
+</div>
+</div>
+</form>
+<div id="listContent">
+<div class="divListOuter" style="width: 788px; height: auto;">
+<div class="divListInner">
+	<table class="listTable">
+		<tr>
+			<th width="45">序号</th>
+			<th>业主名称</th>
+			<th>证件类型</th>
+			<th>证件号码</th>
+			<th>分摊面积(㎡)</th>
+			<th>电话</th>
+			<th>手机</th>
+		</tr>
+		
+			<tr class="tr1">
+				<td align="center">1&nbsp;</td>
+				<td align="center">22&nbsp;</td>
+				<td>未定义&nbsp;</td>
+				<td>13222&nbsp;</td>
+				<td align="right">
+					80.10
+				</td>
+				<td>0123&nbsp;</td>
+				<td>1234568&nbsp;</td>
+			</tr>
+		    <tr class="tr2">
+				<td align="center">1&nbsp;</td>
+				<td align="center">22&nbsp;</td>
+				<td>未定义&nbsp;</td>
+				<td>13222&nbsp;</td>
+				<td align="right">
+					80.10
+				</td>
+				<td>0123&nbsp;</td>
+				<td>1234568&nbsp;</td>
+			</tr>
+	</table>
+</div>
+</div>
+</div>
+</body>
+</html>

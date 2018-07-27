@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>物业管理信息系统</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-store"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+		<meta http-equiv="description" content="This is my page" />
+		<link href="../css/default.css" type="text/css" rel="stylesheet" />
+		<link href="../js/validate/jquery.validate.css" type="text/css"
+			rel="stylesheet" />
+
+		<script src="../js/common.js" type="text/javascript"></script>
+		<script src="../js/jquery.js" type="text/javascript"></script>
+		<script src="../js/validate/jquery.validate.js"
+			type="text/javascript"></script>
+		<script src="../js/validate/messages_cn.js" type="text/javascript"></script>
+		<script>
+	//重复提交标志
+
+	$(document).ready( function() {
+			//为inputForm注册validate函数
+			$("#inputForm").validate({
+			});
+	});
+	
+</script>
+	</head>
+	<body>
+		<h1>
+			处理银行信息
+		</h1>
+			<p align="center"></p>
+		<form id="inputForm" action="finance-suc.htm" method="post" >
+			<div id="inputContent">
+				<div class="divInputOuter" style="width: 700px; height: auto;">
+					<div class="divInputInner" class="listTable" style="width: 690px;">
+						<table class="inputTable">
+						
+							<tr>
+								<th>
+									投诉人：
+								</th>
+								<td align="left">							
+										赵六
+										<input type="hidden" name="zjkAddonBujiao(2).personName" value="赵六" id="zjkAddonBujiao_2__personName"/>
+								</td>
+								<th>
+									投诉日期：
+								</th>
+								<td align="left">
+									2016-8-6
+									<input type="hidden" name="zjkAddonBujiao(2).houseCode" value="2016-8-6" id="zjkAddonBujiao_2__houseCode"/>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									房屋信息：
+								</th>
+								<td align="left">
+									3-1213
+								</td>
+								<th>
+									是否解决：
+								</th>
+								<td align="left">
+									<input type="text" name="zjkAddonBujiao(2).pzqj" value="" id="zjkAddonBujiao_2__pzqj"/>
+								</td>
+								
+								
+							</tr>
+							<tr>
+								<th>
+									处理人：
+								</th>
+								<td align="left">
+								<input type="text" name="zjkAddonBujiao(2).pzqj" value="" id="zjkAddonBujiao_2__pzqj"/>
+								</td>
+								<th>
+									投诉内容：
+								</th>
+								<td align="left">
+									 经常有没素质的业主乱丢垃圾，而且垃圾箱过少且缺少垃圾分类，望尽快解决
+								<input type="hidden" name="zjkAddonBujiao(2).personMoney" value="null" id="zjkAddonBujiao_2__personMoney"/>
+								
+								</td>
+							</tr>
+							
+							
+			            </table>
+					</div>
+				</div>
+			</div>
+			<p></p>
+			<center>
+			</center>
+			<center>
+				<input type="submit" value="保存" onclick=" return confirm('确认保存！');"  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="submit" value="返回" onclick=" return confirm('返回上一页！');"  />
+			</center>
+
+		   
+		</form>
+		
+	</body>
+</html>

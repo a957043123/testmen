@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0029)http://127.0.0.1:8080/hr/tree -->
+<HTML><HEAD><TITLE>哈尔滨市住房专项维修资金管理信息系统</TITLE>
+<META http-equiv=Content-Type content=text/html;charset=GBK>
+<META http-equiv=Cache-Control content=no-store>
+<META http-equiv=Pragma content=no-cache>
+<META http-equiv=Expires content=0>
+<META content="MSHTML 6.00.6000.17023" name=GENERATOR>
+<link href="../css/default.css" type="text/css" rel="stylesheet" />
+<link href="../js/validate/jquery.validate.css" type="text/css"	rel="stylesheet" />
+<link rel="stylesheet" href="../js/jquery-ui.css" type="text/css" media="screen" charset="GBK" /> 
+<script src="/js/jquery.js" type="text/javascript"></script>
+<script src="js/validate/jquery.validate.js" type="text/javascript"></script>
+<script src="js/validate/messages_cn.js" type="text/javascript"></script>
+<script src="js/identity.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript">
+		//查询项目库
+		$(document).ready(function(){	
+			$("#proid").click(function (){
+				var value = window.showModalDialog("page.htm","","");
+				$("#proName").val(value);
+			});
+			
+			//为inputForm注册validate函数
+			$("#inputForm").validate({
+				rules: { 
+					houseAddress: { 
+	    				required: true, 
+	    				remote: "received-person!checkHouseAddress.action"
+					}
+				},
+				messages: {
+					houseAddress: {
+						remote: "此房屋坐落已存在"
+					}
+			 	},
+				submitHandler: function(form) {
+	                //如果想提交表单, 需要使用form.submit()而不要使用(form).submit()
+	                if (form.op.value == 'save-direct') {
+	                	 if (confirm('确认保存信息?不再添加业主!')) {
+							form.action = "received-person!important";
+	        				form.submit();
+	        			}
+	                } else if (form.op.value == 'add-person') {
+	                	 if (confirm('确认添加业主?')) {
+	                		form.action = "received-person!addperson";
+	        				form.submit();
+	        			}
+	                }
+            	}
+			});
+		});
+
+		function checkthis() 
+		{ 
+		var t=document.getElementById("tow"); 
+		var reg=  /^(-[1-9]|[1-9]|(0[.])|(-(0[.])))[0-9]{0,}(([.]*\d{1,2})|[0-9]{0,})$/;
+		if(!reg.test(t.value)){
+			alert("请保留两位小数！");
+		}
+		
+		} 
+
+		
+	</script>
+</head>
+<body onLoad="document.all('personTemp.personName').focus()">
+<h1>商品住房业主交存维修资金</h1>
+<form id="inputForm" action="received-person" method="post">
+<div id="inputContent">
+<div class="divInputOuter" style="width: 697px; height: auto;">
+<div class="divInputInner">
+<table class="inputTable">
+	<tr class="tr1">
+		<th width="200">业主名称</th>
+		<td align="left">
+			<input type="text" name="personTemp.personName" size="40" value="" class="required" maxlength="100"/>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>证件类型</th>
+		<td id="idtp" align="left">
+			<select name="personTemp.personIdtp" id="personTemp.personIdtp" class="required" style="width: 275px">
+				<option value="">选择证件类型</option>
+				
+					<option value="1">护照</option>
+				
+					<option value="2">身份证</option>
+				
+					<option value="3">军人证</option>
+				
+					<option value="4">营业执照</option>
+				
+					<option value="161">组织机构代码证</option>
+				
+					<option value="5">未定义</option>
+				
+			</select> 
+			<script type="text/javascript">
+				document.all('personTemp.personIdtp').value=;
+				
+				
+				
+			</script>
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>证件号码</th>
+		<td id="idno" align="left">
+			<input type="text" name="personTemp.personIdno" id="personTemp.personIdno" size="40" value="" class="shenfenRequired" maxlength="50" />
+			<span id="shenfenMessage"></span>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>建筑面积</th>
+		<td align="left">
+			<input id="tow" onBlur="checkthis();" type="text" name="personTemp.personArea" size="40" value="" class="required number" maxlength="14"/>㎡
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>联系电话</th>
+		<td align="left">
+			<input type="text" name="personTemp.personTel" size="40" value="" class="required" maxlength="50"/>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>业主手机</th>
+		<td align="left">
+			<input type="text" name="personTemp.personPhone" size="40" value="" maxlength="50"/>
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>&nbsp;</th>
+		<td align="left">*请将所有信息填写完成后再点击追加业主或保存信息按钮</td>
+	</tr>
+	<tr class="tr2">
+		<th>项目名称</th>
+		<td align="left">
+		<input type="text" name="houseTemp.houseProjectname" size="40" maxlength="100"
+			value="" id="proName" readonly="readonly"/>
+			<input type="button"  value="点击查找项目名称" id="proid"/>
+			
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>房屋坐落</th>
+		<td align="left">
+			<input type="text" id="houseAddress" name="houseAddress" size="40" value="" maxlength="100"/>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>房屋性质</th>
+		<td align="left">
+			<select name="houseTemp.houseKind" id="houseTemp.houseKind" class="required" style="width: 275px">
+				<option value="">选择房屋性质</option>
+				
+					<option value="9">商品住房(无电梯)</option>
+				
+					<option value="141">旧有房屋</option>
+				
+					<option value="144">五元</option>
+				
+					<option value="147">十元</option>
+				
+					<option value="10">商品住房(有电梯)</option>
+				
+					<option value="15">其他非住宅(商业,办公,停车库等)(无电梯)</option>
+				
+					<option value="16">其他非住宅(商业,办公,停车库等)(有电梯)</option>
+				
+			</select> 
+			<script type="text/javascript">
+				document.all('houseTemp.houseKind').value=;
+			</script>
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th>房屋用途</th>
+		<td align="left">
+			<select name="houseTemp.houseTouse" id="houseTemp.houseTouse" class="required" style="width: 275px">
+				<option value="">选择房屋用途</option>
+				
+					<option value="47">住宅</option>
+				
+					<option value="48">非住宅</option>
+				
+					<option value="49">车库</option>
+				
+					<option value="50">未定义</option>
+				
+			</select>
+			<script type="text/javascript">
+				document.all('houseTemp.houseTouse').value=;
+			</script>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>售房单位</th>
+		<td align="left">
+			<input type="text" name="houseTemp.houseBuildunit" size="40" value="" maxlength="100"/>
+		</td>
+	</tr>
+	<tr class="tr1">
+		<th colspan="2">
+			<input type="button" value="保存信息" onClick="document.URL= 'collen-2-4.htm'" />&nbsp; 
+			<input class="shenfenSubmit" type="button" value="追加业主" onClick="document.URL='collen-2-2.htm'" /> 
+			<input type="hidden" name="op" />
+		</th>
+	</tr>
+</table>
+</div>
+</div>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,137 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>哈尔滨市住房专项维修资金管理信息系统</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-store"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link href="../css/default.css" type="text/css" rel="stylesheet" />
+<link href="../js/validate/jquery.validate.css" type="text/css"	rel="stylesheet" />
+<link rel="stylesheet" href="../js/jquery-ui.css" type="text/css" media="screen" charset="utf-8" /> 
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript" ></script>
+<script src="../js/ui.datepicker-zh-CN.js" type="text/javascript" ></script>
+<script src="../js/validate/jquery.validate.js"	type="text/javascript"></script>
+<script src="../js/validate/messages_cn.js" type="text/javascript"></script>
+<script src="../js/mouse_over_out_click.js" type="text/javascript"></script>
+<script type="text/javascript">
+var org_color;
+$(document).ready(function(){
+ 	$(window).scroll(function(){
+		var aa = $("#aa");
+		var sl = $(this).scrollLeft();
+		var aaLeft = aa.offset().left;
+		aa.css('margin-left',sl + 'px');
+ 	 });
+ 	 
+	$(".tr3").click(function(){
+		
+		
+		if(org_color != null){
+			org_color.css('background','#FFFFFF');
+		}
+	
+		var _color = $(this);
+		org_color = _color;
+		_color.css('background','powderblue');
+		
+	});
+});
+</script>
+<style type="text/css">
+	#aa{
+		width:100px;
+	}
+</style>
+<script type="text/javascript" language="javascript">
+		$(document).ready(function(){	
+			$("#opdateBegin").datepicker({buttonImage: '../images/calendar.gif'});
+			$("#opdateEnd").datepicker({buttonImage: '../images/calendar.gif'});
+			//为inputForm注册validate函数
+			$("#inputForm").validate();
+		});
+	</script>
+	
+</head>
+<body onload="document.all('opdateBegin').focus()">
+<form id="inputForm" action="shoukuan-1.htm" method="post">
+<div id="inputContent">
+<img src="../images/hydl.gif" alt="住房专项维修资金" />
+<h1 align="center">银行收款每日对账查询</h1>
+<div class="divInputOuter" style="width:550; height: auto;">
+<div class="divInputInner">
+<table class="inputTable">
+	<tr>
+		<th>日期查询</th>
+		<td>
+		
+			<input type="text" id="opdateBegin" name="opdateBegin" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+		<th>到</th>
+		<td>
+			<input type="text" id="opdateEnd" name="opdateEnd" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+	</tr>
+	<tr>
+		<th>业主名称</th>
+		<td>
+			<input type="text" name="personInfo.personName" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+		<th>资金账号</th>
+		<td>
+			<input type="text" name="personInfo.personCode" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+	</tr>
+	<tr>
+		<th>产业代码</th>
+		<td>
+			<input type="text" name="houseInfo.houseCode" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+		<th>业务类型</th>
+		<td>
+			<select name="houseInfo.houseKind" id="houseInfo.houseKind"  style="width: 275px">
+				<option value="">全部</option>
+				
+					<option value="9">商品住房(无电梯)</option>
+				
+					<option value="141">旧有房屋</option>
+				
+					<option value="144">五元</option>
+				
+					<option value="147">十元</option>
+				
+					<option value="10">商品住房(有电梯)</option>
+				
+					<option value="15">其他非住宅(商业,办公,停车库等)(无电梯)</option>
+				
+					<option value="16">其他非住宅(商业,办公,停车库等)(有电梯)</option>
+				
+					<option value="11">已购公有住房(无电梯)</option>
+				
+					<option value="12">已购公有住房(有电梯)</option>
+				
+					<option value="181">已购公有住房</option>
+				
+					<option value="17">旧有房屋</option>
+				
+			</select> 
+		</td>
+		</tr>
+</table>
+
+</div>
+</div>
+
+<br/>
+
+<br/>
+<center>
+<input type="submit" value="  查询  " />&nbsp;&nbsp;&nbsp;<input type="reset" value="  重置  " />
+</center>
+<p></p>
+</div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* 整体样式控制-----*/
+body {
+	font-family: "宋体", Arial;
+	font-size: 16px;
+	color: #7599C1;
+	font-weight: normal;
+	text-transform: none;
+	font-style: normal;
+	background-image: url(../images/bg.gif);
+	background-repeat: inherit;
+	background-attachment: inherit;
+}
+
+h1 {
+	text-align: center;
+	color: #7F9DB9;
+	font-size: 28px;
+}
+
+/* 链接控制-----*/
+.link {
+	font-family: "宋体", Arial;
+	font-size: 16px;
+	line-height: 18px;
+	text-decoration: underline;
+	color: #7F9DB9;
+}
+
+/* 按钮样式控制-----*/
+.an {
+	font-family: "宋体", Arial;
+	font-size: 16px;
+	height: 22px;
+	line-height: 18px;
+	color: #7F9DB9;
+}
+
+/* 文本输入框样式控制-----*/
+.txt {
+	font-size: 14px;
+	line-height: 18px;
+	border: 1px solid #B0B9C0;
+	height: 18px;
+}
+
+/* 下拉列表样式控制-----*/
+
+.xllb {
+	font-size: 16px;
+	font-style: normal;
+	line-height: 18px;
+	border: 1px #B0B9C0;
+	color: #7F9DB9;
+}
+
+.anCopy {
+	font-family: "宋体,Arial";
+	font-size: 16px;
+	border: 1px solid #007C9C;
+	height: 18px;
+	line-height: 18px;
+	margin: 0px;
+	padding: 0px;
+	width: 150px;
+	background-color: #D1F7FE;
+}
+
+.anCopy2 {
+	font-family: "宋体,Arial";
+	font-size: 16px;
+	border: none;
+	height: 23px;
+	line-height: 18px;
+	margin: 0px;
+	padding: 0px;
+	width: 61px;
+	background-image: url(tj.gif);
+}
+
+.table {
+	font-family: "宋体";
+	font-size: 16px;
+	line-height: 18px;
+	height: 20px;
+}

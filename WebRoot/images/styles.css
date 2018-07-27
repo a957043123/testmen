@@ -1,0 +1,18 @@
+/* 整体样式控制-----*/
+body {
+	font-family: "宋体,Arial";
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0px;
+	color: #000000;
+	font-weight: normal;
+	text-transform: none;
+	font-style: normal;
+        scrollbar-face-color:#F0F0F0;
+        scrollbar-highlight-color:#E3E3E3;
+        scrollbar-3dlight-color:#F0F0F0;
+        scrollbar-darkshadow-color:#F0F0F0;
+        scrollbar-Shadow-color:#E3E3E3;
+        scrollbar-arrow-color:#BBBBBB;
+        scrollbar-track-color:#F2F2F2;
+}

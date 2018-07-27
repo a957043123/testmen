@@ -1,0 +1,116 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>物业管理系统</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-store"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link href="../css/default.css" type="text/css" rel="stylesheet" />
+<link href="../js/validate/jquery.validate.css" type="text/css"	rel="stylesheet" />
+<link rel="stylesheet" href="../js/jquery-ui.css" type="text/css" media="screen" charset="utf-8" /> 
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript" ></script>
+<script src="../js/ui.datepicker-zh-CN.js" type="text/javascript" ></script>
+<script src="../js/validate/jquery.validate.js"	type="text/javascript"></script>
+<script src="../js/validate/messages_cn.js" type="text/javascript"></script>
+<script src="../js/mouse_over_out_click.js" type="text/javascript"></script>
+<script type="text/javascript">
+var org_color;
+$(document).ready(function(){
+ 	$(window).scroll(function(){
+		var aa = $("#aa");
+		var sl = $(this).scrollLeft();
+		var aaLeft = aa.offset().left;
+		aa.css('margin-left',sl + 'px');
+ 	 });
+ 	 
+	$(".tr3").click(function(){
+		
+		
+		if(org_color != null){
+			org_color.css('background','#FFFFFF');
+		}
+	
+		var _color = $(this);
+		org_color = _color;
+		_color.css('background','powderblue');
+		
+	});
+});
+</script>
+<style type="text/css">
+	#aa{
+		width:100px;
+	}
+</style>
+<script type="text/javascript" language="javascript">
+		$(document).ready(function(){	
+			$("#opdateBegin").datepicker({buttonImage: '../images/calendar.gif'});
+			$("#opdateEnd").datepicker({buttonImage: '../images/calendar.gif'});
+			//为inputForm注册validate函数
+			$("#inputForm").validate();
+		});
+	</script>
+	
+</head>
+<body onload="document.all('opdateBegin').focus()">
+<form id="inputForm" action="shoukuan-1.htm" method="post">
+<div id="inputContent">
+<img src="../images/hydl.gif" alt="欢迎" />
+<h1 align="center">管理处登记记录查询</h1>
+<div class="divInputOuter" style="width:550; height: auto;">
+<div class="divInputInner">
+<table class="inputTable">
+	<tr>
+		<th>日期查询</th>
+		<td>
+		
+			<input type="text" id="opdateBegin" name="opdateBegin" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+		<th>到</th>
+		<td>
+			<input type="text" id="opdateEnd" name="opdateEnd" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+	</tr>
+	<tr>
+		<th>操作人查询</th>
+		<td>
+			<input type="text" name="personInfo.personName" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+		
+	
+		<th>申请类型</th>
+		<td>
+			<select name="houseInfo.houseKind" id="houseInfo.houseKind"  style="width: 275px">
+				<option value="">全部</option>
+				
+					<option value="9">水务维修</option>
+				
+					<option value="141">电路维修</option>
+				
+					<option value="144">暖气维修</option>
+				
+					<option value="147">门窗维修</option>
+				
+				
+			</select> 
+		</td>
+		</tr>
+</table>
+
+</div>
+</div>
+
+<br/>
+
+<br/>
+<center>
+<input type="submit" value="  查询  " />&nbsp;&nbsp;&nbsp;<input type="reset" value="  重置  " />
+</center>
+<p></p>
+</div>
+</form>
+
+</body>
+</html>

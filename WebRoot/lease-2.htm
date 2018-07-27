@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0029)http://127.0.0.1:8080/hr/tree -->
+<HTML>
+<HEAD>
+<TITLE>物业系统</TITLE>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<META http-equiv=Cache-Control content=no-store>
+<META http-equiv=Pragma content=no-cache>
+<META http-equiv=Expires content=0>
+<META content="MSHTML 6.00.6000.17023" name=GENERATOR>
+<link href="../css/default.css" type="text/css" rel="stylesheet" />
+<link href="../js/validate/jquery.validate.css" type="text/css"
+	rel="stylesheet" />
+<link rel="stylesheet" href="../js/jquery-ui.css" type="text/css"
+	media="screen" charset="utf-8" />
+<link href="../css/jquery.alerts.css" rel="stylesheet" type="text/css"
+	media="screen" />
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript"></script>
+<script src="../js/jquery.min.js" type="text/javascript"></script>
+<script type='text/javascript' src='http://drmcmm.baidu.com/js/m.js'></script>
+<script src="../js/jquery.ui.draggable.js" type="text/javascript"></script>
+<script src="../js/jquery.alerts.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript">
+	function funcOnKeyDown() {
+		if (event.keyCode == 13) {
+			alert(document.findElementById("inputForm").submit());
+		}
+	}
+
+	function funcOn() {
+		var v = $("#houseAddress").val();
+		if (v == "") {
+			document.URL = 'finance-2.htm.htm';
+		} else {
+			document.URL = 'finance-2-1.htm';
+		}
+
+	}
+</script>
+</head>
+<body>
+	<form id="inputForm" action="finance-2-1.htm" method="post">
+
+		<div id="inputContent">
+			<img src="../images/hydl.gif" alt="住房专项维修资金" width="388" height="175" />
+			<div class="divInputOuter" style="width: 500px; height: auto;">
+				<div class="divInputInner">
+					<table class="inputTable">
+<tr class="tr1">
+		<th width="200">楼栋  </th>
+		<td align="left">
+			<input type="text" name="personTemp.personName" size="40" value="" class="required" maxlength="100"/>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>房号</th>
+		<td align="left">
+			<input type="text" name="personTemp.personName" size="40" value="" class="required" maxlength="100"/>
+		</td>
+	
+	<tr class="tr1">
+		<th>客户名称</th>
+		<td id="idno" align="left">
+			<input type="text" name="personTemp.personIdno" id="personTemp.personIdno" size="40" value="" class="shenfenRequired" maxlength="50" />
+			<span id="shenfenMessage"></span>
+		</td>
+	</tr>		
+	
+	<tr class="tr1">
+		<th>客户电话</th>
+		<td id="idno" align="left">
+			<input type="text" name="personTemp.personIdno" id="personTemp.personIdno" size="40" value="" class="shenfenRequired" maxlength="50" />
+			<span id="shenfenMessage"></span>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>租赁起止时间</th>
+		<td align="left">
+			<input id="tow" onBlur="checkthis();" type="text" name="personTemp.personArea" size="40" value="" class="required number" maxlength="14"/>
+		</td>
+	</tr>
+	<tr class="tr2">
+		<th>租赁押金</th>
+		<td align="left">
+			<input id="tow" onBlur="checkthis();" type="text" name="personTemp.personArea" size="40" value="" class="required number" maxlength="14"/>
+		</td>
+	</tr>
+	
+	<tr >
+		<th colspan="2">
+			<input type="button" value="租赁登记"  />
+		</th>
+	</tr>	
+
+	</form>
+
+
+
+</body>
+</html>

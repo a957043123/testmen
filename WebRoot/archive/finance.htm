@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0029)http://127.0.0.1:8080/hr/tree -->
+<HTML><HEAD><TITLE>哈尔滨市住房专项维修资金管理信息系统</TITLE>
+<META http-equiv=Content-Type content=text/html;charset=GBK>
+<META http-equiv=Cache-Control content=no-store>
+<META http-equiv=Pragma content=no-cache>
+<META http-equiv=Expires content=0>
+<META content="MSHTML 6.00.6000.17023" name=GENERATOR>
+<link href="../css/default.css" type="text/css" rel="stylesheet" />
+<link href="../js/validate/jquery.validate.css" type="text/css"	rel="stylesheet" />
+<link rel="stylesheet" href="/hr/js/jquery-ui.css" type="text/css" media="screen" charset="utf-8" /> 
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript" ></script>
+<script src="../js/ui.datepicker-zh-CN.js" type="text/javascript" ></script>
+<script src="../js/validate/jquery.validate.js"	type="text/javascript"></script>
+<script src="../js/validate/messages_cn.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript">
+		function test(){
+			if($("#houseCode").val() == ""||$("#houseCode").val() == null){
+		       alert("产业代码不能为空！");
+		       return false;
+			}else{
+				var form = document.getElementById("inputForm");
+				form.action = "finance-1.htm";
+				form.submit();
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+<form action="" method="post" id="inputForm">
+<div id="inputContent">
+<img src="../images/hydl.gif" alt="住房专项维修资金" width="388" height="175" />
+<h1>财务科数据处理</h1>
+
+<div class="divInputOuter" style="width: 500px; height: auto;">
+<div class="divInputInner" style="width: 490px;">
+
+<table class="inputTable">	
+	<tr>
+		<th>资金账号</th>
+		<td>
+		<input  name="houseCode" value="" type="text" id="houseCode"/>
+		</td>
+		<td>
+		<input type="submit" value="  查询  " onClick="return test();"/>
+		</td>
+	</tr>
+</table>
+</div>
+</div>
+<p>	
+	
+
+</p>
+</div>
+
+
+</form>
+
+
+
+
+</body>
+</html>

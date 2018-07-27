@@ -1,0 +1,252 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>哈尔滨市住房专项维修资金管理信息系统</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-store"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link href="../css/default.css" type="text/css" rel="stylesheet" />
+<link href="../js/validate/jquery.validate.css" type="text/css"	rel="stylesheet" />
+<link rel="stylesheet" href="../js/jquery-ui.css" type="text/css" media="screen" charset="utf-8" /> 
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript" ></script>
+<script src="../js/ui.datepicker-zh-CN.js" type="text/javascript" ></script>
+<script src="../js/validate/jquery.validate.js"	type="text/javascript"></script>
+<script src="../js/validate/messages_cn.js" type="text/javascript"></script>
+<script src="../js/mouse_over_out_click.js" type="text/javascript"></script>
+<script type="text/javascript">
+var org_color;
+$(document).ready(function(){
+ 	$(window).scroll(function(){
+		var aa = $("#aa");
+		var sl = $(this).scrollLeft();
+		var aaLeft = aa.offset().left;
+		aa.css('margin-left',sl + 'px');
+ 	 });
+ 	 
+	$(".tr3").click(function(){
+		
+		
+		if(org_color != null){
+			org_color.css('background','#FFFFFF');
+		}
+	
+		var _color = $(this);
+		org_color = _color;
+		_color.css('background','powderblue');
+		
+	});
+});
+</script>
+<style type="text/css">
+	#aa{
+		width:100px;
+	}
+</style>
+<script type="text/javascript" language="javascript">
+		$(document).ready(function(){	
+			$("#opdateBegin").datepicker({buttonImage: '../images/calendar.gif'});
+			$("#opdateEnd").datepicker({buttonImage: '../images/calendar.gif'});
+			//为inputForm注册validate函数
+			$("#inputForm").validate();
+		});
+	</script>
+	
+</head>
+<body onload="document.all('opdateBegin').focus()">
+<form id="inputForm" action="payee-shoukuan-collate!input.action" method="post">
+<div id="inputContent">
+<img src="../images/hydl.gif" alt="住房专项维修资金" />
+<h1 align="center">银行收款每日对账查询</h1>
+<div class="divInputOuter" style="width:550; height: auto;">
+<div class="divInputInner">
+<table class="inputTable">
+	<tr>
+		<th>日期查询</th>
+		<td>
+		
+			<input type="text" id="opdateBegin" name="opdateBegin" onkeydown="funcOnKeyDown();" maxlength="100" value="2010-11-01"/>
+		</td>
+		<th>到</th>
+		<td>
+			<input type="text" id="opdateEnd" name="opdateEnd" onkeydown="funcOnKeyDown();" maxlength="100" value="2010-12-01"/>
+		</td>
+	</tr>
+	<tr>
+		<th>业主名称</th>
+		<td>
+			<input type="text" name="personInfo.personName" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+		<th>资金账号</th>
+		<td>
+			<input type="text" name="personInfo.personCode" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+	</tr>
+	<tr>
+		<th>产业代码</th>
+		<td>
+			<input type="text" name="houseInfo.houseCode" onkeydown="funcOnKeyDown();" maxlength="100" value=""/>
+		</td>
+		<th>业务类型</th>
+		<td>
+			<select name="houseInfo.houseKind" id="houseInfo.houseKind"  style="width: 275px">
+				<option value="">全部</option>
+				
+					<option value="9">商品住房(无电梯)</option>
+				
+					<option value="141">旧有房屋</option>
+				
+					<option value="144">五元</option>
+				
+					<option value="147">十元</option>
+				
+					<option value="10">商品住房(有电梯)</option>
+				
+					<option value="15">其他非住宅(商业,办公,停车库等)(无电梯)</option>
+				
+					<option value="16">其他非住宅(商业,办公,停车库等)(有电梯)</option>
+				
+					<option value="11">已购公有住房(无电梯)</option>
+				
+					<option value="12">已购公有住房(有电梯)</option>
+				
+					<option value="181">已购公有住房</option>
+				
+					<option value="17">旧有房屋</option>
+				
+			</select> 
+		</td>
+		</tr>
+</table>
+
+</div>
+</div>
+
+<br/>
+
+<br/>
+<center>
+<input type="submit" value="  查询  " />&nbsp;&nbsp;&nbsp;<input type="reset" value="  重置  " />
+</center>
+<p></p>
+</div>
+</form>
+
+<div class="divListOuter" style="width: auto;">
+<div class="divListInner">
+<table class="listTable">
+	<tr class="tr1">
+		<th nowrap="nowrap">序号</th>
+		<th nowrap="nowrap">资金账号</th>
+		<th nowrap="nowrap">业主名称</th>
+		<th nowrap="nowrap">产业代码</th>
+		<th nowrap="nowrap">项目名称</th>
+		<th nowrap="nowrap">交存标准</th>
+		<th nowrap="nowrap">归集资金类型</th>
+		<th nowrap="nowrap">业务类型</th>
+		<th nowrap="nowrap">金额</th>
+		<th nowrap="nowrap">收款票据号</th>
+		<th nowrap="nowrap">凭证期间</th>
+		<th nowrap="nowrap">凭证号</th>
+		<th nowrap="nowrap">收款人</th>
+		<th nowrap="nowrap">是否收款</th>
+		<th nowrap="nowrap">收款日期</th>
+	</tr>
+	
+		<tr class="tr1">
+			<td nowrap="nowrap">1</td>
+			<td nowrap="nowrap">0909010417</td>
+			<td nowrap="nowrap">李美桥</td>
+			<td nowrap="nowrap">01083306001000011428</td>
+			<td nowrap="nowrap">麦凯乐购物休闲广场 *****</td>
+			<td nowrap="nowrap">24.0元/㎡</td>
+			<td nowrap="nowrap">分户</td>
+			<td nowrap="nowrap">
+				其他非住宅(商业,办公,停车库等)(无电梯)
+			</td>
+			<td nowrap="nowrap">
+				763.52元
+			</td>
+			<td nowrap="nowrap">136</td>
+			<td nowrap="nowrap"></td>
+			<td nowrap="nowrap"></td>
+			<td nowrap="nowrap">bbb</td>
+			<td nowrap="nowrap">
+				已交款
+			</td>
+			<td nowrap="nowrap"> 2010年11月30日 </td>
+		</tr>
+	
+		<tr class="tr2">
+			<td nowrap="nowrap">2</td>
+			<td nowrap="nowrap">0911110003</td>
+			<td nowrap="nowrap">张程</td>
+			<td nowrap="nowrap"></td>
+			<td nowrap="nowrap">麦凯乐购物休闲广场 *****</td>
+			<td nowrap="nowrap">32.0元/㎡</td>
+			<td nowrap="nowrap">分户</td>
+			<td nowrap="nowrap">
+				其他非住宅(商业,办公,停车库等)(有电梯)
+			</td>
+			<td nowrap="nowrap">
+				1,004.80元
+			</td>
+			<td nowrap="nowrap">176</td>
+			<td nowrap="nowrap"></td>
+			<td nowrap="nowrap"></td>
+			<td nowrap="nowrap">aaa</td>
+			<td nowrap="nowrap">
+				已交款
+			</td>
+			<td nowrap="nowrap"> 2010年12月1日 </td>
+		</tr>
+	
+		<tr class="tr1">
+			<td nowrap="nowrap">3</td>
+			<td nowrap="nowrap">1006110001</td>
+			<td nowrap="nowrap">李艳颖</td>
+			<td nowrap="nowrap"></td>
+			<td nowrap="nowrap">乐民小区</td>
+			<td nowrap="nowrap">24.0元/㎡</td>
+			<td nowrap="nowrap">分户</td>
+			<td nowrap="nowrap">
+				商品住房(无电梯)
+			</td>
+			<td nowrap="nowrap">
+				2,246.40元
+			</td>
+			<td nowrap="nowrap">177</td>
+			<td nowrap="nowrap"></td>
+			<td nowrap="nowrap"></td>
+			<td nowrap="nowrap">nnn</td>
+			<td nowrap="nowrap">
+				已交款
+			</td>
+			<td nowrap="nowrap"> 2010年12月1日 </td>
+		</tr>
+	
+</table>
+
+</div>
+</div>
+
+<center>
+归集总套数
+3套
+&nbsp;&nbsp;&nbsp;&nbsp;
+归集总金额
+4,014.72元&nbsp;&nbsp;&nbsp;
+已收款总金额
+4,014.72元&nbsp;&nbsp;&nbsp;
+未收款总金额
+0.00元&nbsp;&nbsp;&nbsp;
+生成凭证总金额
+0.00元&nbsp;&nbsp;&nbsp;
+未成生凭证总金额
+4,014.72元
+</center>
+
+
+</body>
+</html>

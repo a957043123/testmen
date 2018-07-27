@@ -1,0 +1,71 @@
+@media screen {
+	.onlyPrint {
+		display: none
+	}
+}
+
+@media print {
+	.onlyShow {
+		display: none
+	}
+	
+	.onlyPrint {
+		page-break-before: always
+	}
+}
+
+body {
+	font-family: "宋体", Arial;
+	font-size: 14px;
+	font-weight: normal;
+	text-transform: none;
+	font-style: normal;
+}
+
+h1 {
+	text-align: center;
+	font-size: 30px;
+}
+
+
+div#inputContent {
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.inputTable {
+	border: 1px solid #000000;
+	border-collapse: collapse;
+	width: 75%;
+	height: 100%;
+	border:2px;
+}
+
+.inputTable th {
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	font-family: "宋体";
+	font-size: x-small;
+	font-weight: normal;
+	border:2px;
+/*	color: #7F9DB9;*/
+	text-align: center;
+	padding: 6px 6px 6px 6px;
+}
+
+.inputTable td {
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	font-family: "宋体";
+	font-size: x-small;
+	text-align: left;
+	border:2px;
+	vertical-align: middle;
+	text-align: right;
+	padding: 6px 6px 6px 6px;
+}
+

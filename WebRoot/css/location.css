@@ -1,0 +1,9 @@
+#win{
+	position: absolute;
+	top: 550px;
+	left: 400px;
+	z-index: 99;
+	background:  white;
+	display: none;
+	cursor:hand;
+}

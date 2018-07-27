@@ -1,0 +1,108 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>哈尔滨市住房专项维修资金管理信息系统</title><meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-store"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<link href="../css/default.css" type="text/css" rel="stylesheet" />
+<link href="../js/validate/jquery.validate.css" type="text/css"	rel="stylesheet" />
+<link rel="stylesheet" href="/hr/js/jquery-ui.css" type="text/css" media="screen" charset="utf-8" /> 
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/jquery-ui.js" type="text/javascript" ></script>
+<script src="../js/ui.datepicker-zh-CN.js" type="text/javascript" ></script>
+<script src="../js/validate/jquery.validate.js"	type="text/javascript"></script>
+<script src="../js/validate/messages_cn.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript">
+		function test(){
+			if($("#houseCode").val() == ""||$("#houseCode").val() == null){
+		       alert("产业代码不能为空！");
+		       return false;
+			}else{
+				var form = document.getElementById("inputForm");
+				form.action = "finance-1.htm";
+				form.submit();
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+<form action="#" method="post">
+<div id="inputContent">
+<img src="../images/hydl.gif" alt="住房专项维修资金" />
+<h1>财务科数据处理</h1>
+
+<div class="divInputOuter" style="width: 500px; height: auto;">
+<div class="divInputInner" style="width: 490px;">
+
+<table class="inputTable">	
+	<tr>
+		<th>资金账号</th>
+		<td>
+		<input  name="houseCode" value="" type="text" id="houseCode"/>
+		</td>
+		<td>
+		<input type="submit" value="  查询  " onclick="return test();"/>
+		</td>
+	</tr>
+</table>
+</div>
+</div>
+<p></p>
+</div>
+
+
+<div id="listContent">
+<div class="divListOuter" style="width: 997px; height: auto;">
+<div class="divListInner">
+<table class="listTable">
+	<tr>
+		<th nowrap="nowrap">序号</th>
+		<th nowrap="nowrap">项目名称</th>
+		<th nowrap="nowrap">房屋坐落</th>
+		<th nowrap="nowrap">资金账号</th>
+		<th nowrap="nowrap">业主名称</th>
+		
+	</tr>
+	
+		<tr class="tr1">
+			<td align="center">1</td>
+			<td align="center">
+			<a href="finance-2.htm">哈拖拉机配件厂职工集资住宅楼*****</a></td>
+			<td align="center">哈拖拉机配件</td>
+			<td align="center">1012110000</td>
+			<td align="center">t3</td>
+		</tr>
+	
+		<tr class="tr2">
+			<td align="center">2</td>
+			<td align="center">
+			<a href="finance-2.htm">哈拖拉机配件厂职工集资住宅楼*****</a></td>
+			<td align="center">哈拖拉机配件厂</td>
+			<td align="center">1011110063</td>
+			<td align="center">t1</td>
+		</tr>
+	
+		<tr class="tr1">
+			<td align="center">3</td>
+			<td align="center">
+			<a href="finance-2.htm">哈拖拉机配件厂职工集资住宅楼*****</a></td>
+			<td align="center">哈拖拉机配件厂</td>
+			<td align="center">1011110064</td>
+			<td align="center">t2</td>
+		</tr>
+	
+</table>
+</div>
+</div>
+</div>
+
+</form>
+
+
+
+
+</body>
+</html>
